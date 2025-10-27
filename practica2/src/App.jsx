@@ -1,30 +1,41 @@
-import { useState } from 'react'
+import { useState } from "react"
+import Contador from "./components/Contador"
+import Controles from "./components/Controles"
+import Props from "./components/Props"
+import InputTexto from "./components/InputTexto"
+import Formulario from "./components/formulario"
+import MensajeCondicional from "./components/MensajeCondicional"
+import Sesion from "./components/Sesion"
+import MensajeConsola from "./components/MensajeConsola"
+import ContadorEfect from "./components/ContadorEfect"
+import ConsumoApi from "./components/ConsumoApi"
+
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  const [contador, setContador] = useState(0)
+  const nombre = "Jeferson"
+  const apellidos = "Alcazar"
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Props nombre={nombre} apellidos={apellidos} />
+      <hr />
+      <Contador contador={contador} />
+      <Controles contador={contador} setContador={setContador} />
+      <hr />
+      <InputTexto />
+      <hr />
+      <Formulario />
+      <hr />
+      <MensajeCondicional />
+      <hr />
+      <Sesion />
+      <hr />
+      <MensajeConsola />
+      <hr />
+      <ContadorEfect />
+      <hr />
+      <ConsumoApi />
     </>
   )
 }
